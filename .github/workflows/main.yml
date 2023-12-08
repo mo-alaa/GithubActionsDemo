@@ -11,11 +11,5 @@ jobs:
       - name: Set Environment Variable
         run: echo "MY_VAR=$([ '${{ github.ref_name }}' == 'main' ] && echo '${{ vars.MY_NEW_VAR_PROD }}' || echo '${{ vars.MY_NEW_VAR_DEV }}')" >> $GITHUB_ENV
       - name: Use Environment Variable
-        run: echo $MY_VAR 
-      # - name: Extract branch name
-      #   shell: bash
-      #   run: echo "BRANCH_NAME=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
-      #   id: extract_branch
-      # - name: use branch name
-      #   run: echo ${{ env.BRANCH_NAME }}
+        run: echo $MY_VAR
       
