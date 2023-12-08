@@ -6,6 +6,8 @@ jobs:
     steps:
       - name: my-step
         run: 'echo "Hello World!"'
-      - name: step-2
-        run: 'BRANCH=$(git rev-parse --abbrev-ref HEAD) && echo "Current checked out branch: $BRANCH"'
+      - name: Extract branch name
+        shell: bash
+        run: echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
+        id: extract_branch
       
