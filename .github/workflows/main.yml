@@ -9,7 +9,7 @@ jobs:
       - name: try new command
         run: echo ${{ github.ref_name }}  
       - name: Set Environment Variable
-        run: echo "MY_VAR=$([ '${{ github.ref_name }}' == 'refs/heads/main' ] && echo '${{ vars.MY_NEW_SECRET_PROD }}' || echo '${{ vars.MY_NEW_SECRET_DEV }}')" >> $GITHUB_ENV
+        run: echo "MY_VAR=$([ '${{ github.ref_name }}' == 'main' ] && echo '${{ vars.MY_NEW_VAR_PROD }}' || echo '${{ vars.MY_NEW_VAR_DEV }}')" >> $GITHUB_ENV
       - name: Use Environment Variable
         run: echo $MY_VAR 
       # - name: Extract branch name
