@@ -6,6 +6,7 @@ const app = express()
 const port = 3000
 
 app.get('/', (req, res) => {
+  console.log('hi there')
   res.send(process.env.MY_VAR)
 })
 
