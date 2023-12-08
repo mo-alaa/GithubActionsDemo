@@ -5,4 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: my-step
-        run: echo "Hello World!"
+        run: 'echo "Hello World!"'
+      - name: step-2
+        run: 'BRANCH=$(git rev-parse --abbrev-ref HEAD) && echo "Current checked out branch: $BRANCH"'
+      
