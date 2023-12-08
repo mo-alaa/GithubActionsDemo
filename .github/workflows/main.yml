@@ -6,10 +6,12 @@ jobs:
     steps:
       - name: my-step
         run: 'echo "Hello World!"'
-      - name: Extract branch name
-        shell: bash
-        run: echo "BRANCH_NAME=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
-        id: extract_branch
-      - name: use branch name
-        run: echo ${{ env.BRANCH_NAME }}
+      - name: try new command
+        run: echo ${{ github.ref_name }}  
+      # - name: Extract branch name
+      #   shell: bash
+      #   run: echo "BRANCH_NAME=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
+      #   id: extract_branch
+      # - name: use branch name
+      #   run: echo ${{ env.BRANCH_NAME }}
       
